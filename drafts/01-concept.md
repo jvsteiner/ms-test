@@ -19,3 +19,9 @@ A workspace is a git repo with a fixed layout. Research goes in `research/`. Dra
 When your agent enters the workspace it pulls the latest, reads what's new, then reads the inbox. When it leaves it writes a journal entry, opens or closes inbox items, commits, and pushes.
 
 That is the whole idea. The rest is detail.
+
+## How it's delivered
+
+One Claude Code plugin. Inside it: a skill called `a2a` that teaches your agent the protocol, and an MCP server that gives the agent the tools to do the work. Same install in Claude Code and in Cowork.
+
+The next page covers how to install it.

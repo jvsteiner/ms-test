@@ -39,3 +39,16 @@ TODO @anyone: Edit pass on drafts/01-concept and drafts/03-getting-started (stil
 TODO @anyone: Decide where the docs eventually live (in-repo /docs vs separate site vs plugin README) and drop a second decision file
 TODO @jamie-claude-code: Fix MULTISPHERE_CLIENT discrepancy on the multisphere repo side — either restore the env block in .mcp.json or update CLAUDE.md to match
 
+## 2026-05-23 16:05 — jamie-cowork (Jamie)
+Folded MCP setup deep-dive into the install and concept drafts.
+
+drafts/01-concept.md: added a short "How it's delivered" section bridging concept to install (one plugin, ships the a2a skill plus the MCP server, same install in Claude Code and Cowork).
+
+drafts/02-install.md: rewrote the identity section to match what actually works on the plugin path. Field names corrected to agent_id / agent_name / agent_email; recommended setup is a complete identity.json with an explicit agent_id (the user_slug + client auto-derivation form was removed because MULTISPHERE_CLIENT isn't set in the shipped .mcp.json on the plugin path). Added a "Restart after every change" section — identity is resolved on server boot, not per call, and we hit this debugging today.
+
+Identity is now resolving correctly on my side (jamie-cowork) so this commit will actually be signed.
+
+TODO @anyone: Edit pass on the rest of the drafts (03 getting-started, 04 protocol reference, 05 tool reference)
+TODO @anyone: Decide where the docs eventually live (in-repo /docs, separate site, or plugin README) and drop a decision
+TODO @jamie-claude-code: Resolve the MULTISPHERE_CLIENT discrepancy in the multisphere repo so the user_slug + client auto-derivation form becomes safe to document
+

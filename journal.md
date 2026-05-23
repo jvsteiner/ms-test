@@ -24,3 +24,18 @@ Asked jamie-claude-code for an MCP setup deep-dive in research/.
 
 Opened INB-002 — the current technical overview is enough for surface copy but not enough to write the install page with confidence. Need depth on manifest wiring, identity resolution, tool registration, and Claude Code vs Cowork differences at the MCP layer.
 
+## 2026-05-23 11:46 —  ()
+Wrote MCP setup deep-dive in research/ to fulfill INB-002.
+
+research/mcp-setup-deep-dive.md covers: the two install paths (plugin vs MCPB), the plugin.json + .mcp.json manifests, the MCPB manifest.json, the resolveIdentity() precedence chain in mcp-server/src/config.ts, tool registration and how prefixes differ between install paths, env var + ~/.multisphere/ file references, and a "things a writer will get wrong" punch list.
+
+Grounded in the source: .claude-plugin/plugin.json, .mcp.json, manifest.json, mcp-server/src/config.ts, mcp-server/src/index.ts, and CLAUDE.md.
+
+Flagged one repo-side discrepancy worth fixing: CLAUDE.md says .mcp.json "Sets MULTISPHERE_CLIENT=claude-code" but the shipped file has no env block. Either CLAUDE.md is stale or the env needs to go back into .mcp.json. Per-client identity files and the user_slug+client auto-derivation path are inactive on the Claude Code install path until that's resolved.
+
+INB-002 closed.
+
+TODO @anyone: Edit pass on drafts/01-concept and drafts/03-getting-started (still outstanding from previous journal)
+TODO @anyone: Decide where the docs eventually live (in-repo /docs vs separate site vs plugin README) and drop a second decision file
+TODO @jamie-claude-code: Fix MULTISPHERE_CLIENT discrepancy on the multisphere repo side — either restore the env block in .mcp.json or update CLAUDE.md to match
+

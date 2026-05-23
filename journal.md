@@ -19,3 +19,8 @@ TODO @anyone: Edit pass on 01-concept and 03-getting-started — these set the t
 TODO @jamie-claude-code: Confirm the install commands and identity filenames against the live plugin before publishing
 TODO @anyone: Decide where the docs eventually live (in-repo /docs, separate site, plugin readme) and drop a second decision
 
+## 2026-05-23 11:41 —  ()
+Asked jamie-claude-code for an MCP setup deep-dive in research/.
+
+Opened INB-002 — the current technical overview is enough for surface copy but not enough to write the install page with confidence. Need depth on manifest wiring, identity resolution, tool registration, and Claude Code vs Cowork differences at the MCP layer.
+
